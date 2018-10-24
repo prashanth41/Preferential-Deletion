@@ -113,11 +113,9 @@ def death_process():
 	del Graph[selected_node]
 
 
-
 num_of_nodes_1=[]
 num_of_nodes_2=[]
 num_of_nodes_3=[]
-
 
 num_of_edges_1=[]
 num_of_edges_2=[]
@@ -149,9 +147,7 @@ for t in range(0, 10000):
 		num_of_nodes_1.append(len(Graph))	# For Graph nodes
 		#print(num_of_nodes_1)
 		#print("efk")
-
 		edges=0
-
 		for i in Graph:
 			edges+=len(Graph[i])
 
@@ -159,10 +155,7 @@ for t in range(0, 10000):
 		num_of_edges_1.append(edges)
 
 
-
-
 Graph={1:[2,3,4],2:[1],3:[1,4],4:[1,3]}
-# max_node=max(Graph.keys())
 #print(Graph)
 
 # For p = 0.75
@@ -188,7 +181,6 @@ for t in range(0, 10000):
 		#print(num_of_nodes_2)
 		#print("efk")
 		edges=0
-
 		for i in Graph:
 			edges+=len(Graph[i])
 
@@ -196,8 +188,7 @@ for t in range(0, 10000):
 		num_of_edges_2.append(edges)
 
 
-
-
+		
 Graph={1:[2,3,4],2:[1],3:[1,4],4:[1,3]}
 #print(Graph)
 
@@ -224,7 +215,6 @@ for t in range(0, 10000):
 		#print(num_of_nodes_3)
 		#print("efk")
 		edges=0
-
 		for i in Graph:
 			edges+=len(Graph[i])
 
@@ -269,9 +259,6 @@ fig2.savefig('num_of_edges.png')
 
 
 
-
-
-
 #for Graph 3
 Graph={1:[2,3,4],2:[1],3:[1,4],4:[1,3]}
 #print(Graph)
@@ -297,13 +284,12 @@ degree_of_nodes=[]
 for node in Graph:
 	degree_of_nodes.append(len(Graph[node]))
 
-
+	
 distinct_degrees=set(degree_of_nodes)
 distinct_degrees=list(distinct_degrees)
 distinct_degrees=distinct_degrees[::-1]
 
 #print(distinct_degrees)
-
 
 degree_dictionary={}
 
@@ -312,7 +298,6 @@ for i in distinct_degrees:
 
 temp_sum=sum(degree_dictionary.values())
 
-
 cummulative_value=0
 
 for i in degree_dictionary:
@@ -320,13 +305,11 @@ for i in degree_dictionary:
 	degree_dictionary[i]=cummulative_value
 
 
-
 for i in degree_dictionary:
 	degree_dictionary[i]=degree_dictionary[i]/(temp_sum)
 
 
 degree_prob=list(degree_dictionary.values())
-
 
 fig3 = plt.figure(3)
 plt.plot(distinct_degrees, degree_prob, color = 'blue',label='p=0.8')
