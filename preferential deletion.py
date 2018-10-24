@@ -14,25 +14,19 @@ Graph={1:[2,3,4],2:[1],3:[1,4],4:[1,3]}
 #values are the nodes connected the key which is a node
 
 
-
-
-
 def probability_birth(node):
 
 	degree= len(Graph[node])
 	edges=0
 
-
 	for i in Graph:
 		edges+=len(Graph[i])
-
+		
 	edges=math.ceil(edges/2)
 	# if edges==0:
 	# 	return 0
 
 	return (degree)/(2*(edges))
-
-	
 
 
 def probability_death(node):
@@ -62,24 +56,18 @@ def cummulative_probability(probability_of_nodes):
 		return probability_of_nodes
 
 
-
-
 def birth_process():
 
 	probability_of_nodes = []
-
 	selected_node=0
 	 
 	for node in Graph:
-		 
+		
 		probability_of_nodes.append(probability_birth(node))
-
 
 	cummulative_prob_list = cummulative_probability(probability_of_nodes)
 
 	#print(cummulative_prob_list)
-
-
  	
 	new_node=max(Graph.keys())+1
 	
